@@ -20,13 +20,38 @@ RSpec.describe Tutor, type: :model do
   end
 
   describe 'validations' do
+    describe 'fields' do
+      it 'validates presence' do
+        should validate_presence_of(:affiliate)
+        should validate_presence_of(:address)
+        should validate_presence_of(:city)
+        should validate_presence_of(:state)
+        should validate_presence_of(:zip)
+        should validate_presence_of(:cell_phone)
+        should validate_presence_of(:gender)
+        should validate_presence_of(:native_language)
+        should validate_presence_of(:race)
+        should validate_presence_of(:training_type)
+        should validate_presence_of(:referral)
+        should validate_presence_of(:education)
+        should validate_presence_of(:employment)
+        should validate_presence_of(:occupation)
+        should validate_presence_of(:orientation)
+        should validate_presence_of(:training)
+        should validate_presence_of(:dob)
+      end
+    end
+
     describe 'name' do
       it 'validates presence' do
-        should validate_presence_of(:name)
+        should validate_presence_of(:first_name)
+        should validate_presence_of(:last_name)
       end
 
       it 'validates length' do
-        should validate_length_of(:name)
+        should validate_length_of(:first_name)
+          .is_at_most(25)
+        should validate_length_of(:last_name)
           .is_at_most(50)
       end
     end

@@ -75,8 +75,10 @@ class TutorsController < ApplicationController
 
   def tutor_params
     params.require(:tutor).permit(
-      :name,
-      :email
+      :affiliate, :first_name, :last_name, :email, :address, :city, :state,
+      :zip, :phone, :cell_phone, :gender, :native_language, :race, :referral,
+      :training_type, :education, :employment, :occupation, :orientation,
+      :training, :dob
     )
   end
 end

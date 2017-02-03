@@ -10,5 +10,12 @@ class Tutor < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :name, presence: true, length: { maximum: 50 }
+
+  validates :first_name, presence: true, length: { maximum: 25 }
+  validates :last_name, presence: true, length: { maximum: 50 }
+
+  validates_presence_of :affiliate, :address, :city, :state, :zip, :cell_phone,
+                        :gender, :native_language, :race, :training_type, :dob,
+                        :referral, :education, :training, :occupation,
+                        :employment, :orientation
 end
